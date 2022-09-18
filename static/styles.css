@@ -1,0 +1,11 @@
+.jumbotron{
+    /* background-color: orange; */
+}
+.og-title{
+    /* background-color: orangered;
+    font-size: 20px; */
+    font-weight: bold;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+}
