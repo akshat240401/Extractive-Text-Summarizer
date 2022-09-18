@@ -6,28 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summary</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <div class="jumbotron jumbotron-fluid" style="background-color:white">
-            <div class="container">
-              <h1 class="display-4">Text Summarizer</h1>
-              <p class="lead">Retrive the best summary for your text</p>
+<body style="background-color:lightgray; box-sizing: border-box;">
+  <nav class="navbar navbar-expand-lg navbar-dark" id="nav" style="background-color:yellowgreen; position:fixed; width: 100%;">
+      <a class="navbar-brand" href="/">Summarizer</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style="color: white; font-weight:bolder">
+              <b>Languages</b>
+            </a>
+            <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item bg-secondary text-white">English</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item bg-secondary text-white">Hindi</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item bg-secondary text-white">NA</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item bg-secondary text-white">NA</a>
             </div>
-        </div> 
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <div class="container">
+      <div class="jumbotron jumbotron-fluid" style="background-color:transparent; margin-bottom: 0;">
+          <h1 class="display-4" style="margin-left: 300px;"><b>Text is Summarized</b></h1>
+          <p class="lead">With the help of ,<br>•	<b>spaCy</b> an open-source library for NLP in Python.<br>• <b>NLTK</b> a standard python library with The <b>Punkt</b> Sentence Tokenizer<br>• <b>heapq</b> module from standard librarywith it's <b>nlargest()</b> function</p>
+      </div>
+    <div class="container-flex1" style="display:flex;">
+      <div class="container" style="flex:1; background-color: yellowgreen; color:white;font-weight: bold;">
+        <p class="og-title col-sm-4" style="margin-left: 12vw;"><strong>Original Text</strong></p>
+      </div>
+      <div class="container" style="flex:1; background-color: yellowgreen;margin-left: 20px; color: white;font-weight: bold;">
+        <p class="summary-title col-sm-4" style="margin-left: 12vw;"><strong>Summarized Text</strong></p>
+      </div>
     </div>
-
-    <div class="container" style="display:flex; justify-content: space-around; background-color:white">
-        <p class="og-title col-sm-4">Original Text</p>
-        <p class="summary-title col-sm-4">Summarized Text</p>
+    <div class="container-flex" style="display: flex;">
+      <div class="container result" style="height: 300px;width: 10px; overflow: scroll;display:flex; flex:1; background-color: white;border: 3px solid yellowgreen;">
+        <output class="og-txt col-sm-12">{{original_txt}}</output>
+      </div>
+      <div class="container result" style="height: 300px; overflow: scroll;display:flex;flex:1;  background-color: white; border: 3px solid yellowgreen; margin-left: 20px;">
+        <output class="summary-txt col-sm-12">{{summary}}</output>
+      </div>
     </div>
-
-    <div class="container result" style="display:flex ;flex-direction:row; background-color:white">
-        <p class="og-txt col-sm-6">{{original_txt}}</p>
-        <p class="summary-txt col-sm-6">{{summary}}</p>
-    </div>
-
     <script 
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 

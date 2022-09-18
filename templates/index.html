@@ -4,26 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color:lightgray; box-sizing: border-box;">
+    <nav class="navbar navbar-expand-lg navbar-dark" id="nav" style="background-color:yellowgreen; position:fixed; width: 100%;">
+        <a class="navbar-brand" href="/">Summarizer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style="color: white; font-weight:bolder">
+                <b>Languages</b>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:yellowgreen;">
+                <a class="dropdown-item text-white" style="background-color:yellowgreen;">English</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-white" style="background-color:yellowgreen;">Hindi</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
     <div class="container">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">Text Summarizer</h1>
-              <p class="lead">Retrive the best summary for your text</p>
-            </div>
-        </div> 
-
-        <form action="/analyze" method="post">
-            <textarea name="rawtext" id="" rows="10" class="form-control" placeholder="Enter text to summarize"></textarea>
-            <button class="btn btn-primary" type="submit">Submit</button>
+        <div class="jumbotron jumbotron-fluid" style="background-color:transparent; margin-bottom: 0;">
+            <h1 class="display-4"><b>Summarize any text with a click of a button</b></h1>
+            <p class="lead">Summary Generator is a tool to help the users change the way of reading and understanding.<br>Instead of reading through a huge texts, you can get a short and consiced summary of the same text.<br>This summarizer turns huge text into short paragraph.<br> The Paragraph view gives you a unique paragraph summarizing the content.</p>
+        </div>
+        <form action="/summarize" method="post">
+            <textarea name="rawtext" id="" rows="10" cols="30"class="form-control" placeholder="Enter text to summarize" style="overflow:scroll;"></textarea>
+            <button class="btn btn-primary" type="submit" style="background-color:yellowgreen; margin:10px 0px 0px 500px; height: 50px; width: 100px;"><b>Submit</b></button>
         </form>
     </div>
-
-
     <script 
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
