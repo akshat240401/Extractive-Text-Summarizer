@@ -16,7 +16,5 @@ def analyze():
         summary,original_txt,len_orig_txt,len_summary = summarizer(rawtext) or summarizerhi(rawtext)
     return render_template('summary.html',summary=summary,original_txt=original_txt,len_orig_txt=len_orig_txt,len_summary=len_summary)
 
-
-
 if __name__ == "__main__":
     app.run(debug=True)
