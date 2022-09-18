@@ -9,7 +9,7 @@ app=Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/analyze',methods=['GET','POST'])
+@app.route('/summarize',methods=['GET','POST'])
 def analyze():
     if request.method == 'POST':
         rawtext = request.form['rawtext']
